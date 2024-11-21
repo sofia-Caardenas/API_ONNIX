@@ -1,0 +1,216 @@
+getUsuarios
+[
+    {
+        "id": 1,
+        "nombre": "Juan Perez",
+        "email": "juan.perez@example.com",
+        "roles": {
+            "id": 3,
+            "nombre": "Cliente"
+        }
+    },
+    {
+        "id": 2,
+        "nombre": "Maria Gomez",
+        "email": "maria.gomez@example.com",
+        "roles": {
+            "id": 3,
+            "nombre": "Cliente"
+        }
+    },
+    {
+        "id": 3,
+        "nombre": "Pedro Martinez",
+        "email": "pedro.martinez@example.com",
+        "roles": {
+            "id": 3,
+            "nombre": "Cliente"
+        }
+    },
+    {
+        "id": 4,
+        "nombre": "Ana Rodriguez",
+        "email": "ana.rodriguez@example.com",
+        "roles": {
+            "id": 3,
+            "nombre": "Cliente"
+        }
+    },
+    {
+        "id": 5,
+        "nombre": "Carlos Sanchez",
+        "email": "carlos.sanchez@example.com",
+        "roles": {
+            "id": 2,
+            "nombre": "Empleado"
+        }
+    }
+]
+
+--*--------------------*--------------------------*----------
+getUsuariosById
+[
+    {
+        "id": 1,
+        "nombre": "Juan Perez",
+        "email": "juan.perez@example.com",
+        "roles": {
+            "id": 3,
+            "nombre": "Cliente"
+        }
+    }
+]
+
+--*--------------------*--------------------------*----------
+getUsuariosByNombre
+[
+    {
+        "id": 6,
+        "nombre": "Brayan Posada",
+        "email": "Brayannposadac@gmail.com",
+        "roles": {
+            "id": 2,
+            "nombre": "Empleado",
+            "estado": "Activo"
+        }
+    }
+]
+
+--*--------------------*--------------------------*----------
+login
+[
+    {
+        "id": 6,
+        "nombre": "Brayan Posada",
+        "email": "Brayannposadac@gmail.com",
+        "roles": {
+            "id": 3,
+            "nombre": "Cliente",
+            "estado": "Activo"
+        }
+    }
+]
+
+--*--------------------*--------------------------*----------
+getProductos
+[
+    {
+        "id": 1,
+        "nombre": "Caf Premium",
+        "descripcion": "Caf colombiano de alta calidad",
+        "precio": 15000.0,
+        "stock": 50,
+        "rutaImagen": "tata",
+        "estado": "Activo"
+    },
+    {
+        "id": 2,
+        "nombre": "Chuleta valluna",
+        "descripcion": "Chuleta valluna mela caramela",
+        "precio": 25000.0,
+        "stock": 15,
+        "rutaImagen": "tatatu",
+        "estado": "Activo"
+    }
+]
+
+--*--------------------*--------------------------*----------
+getProductosById
+[
+    {
+        "id": 1,
+        "nombre": "Caf Premium",
+        "descripcion": "Caf colombiano de alta calidad",
+        "precio": 15000.0,
+        "stock": 50,
+        "rutaImagen": "tata",
+        "estado": "Activo"
+    }
+]
+
+--*--------------------*--------------------------*----------
+getProductosByNombre
+[
+    {
+        "id": 1,
+        "nombre": "Caf Premium",
+        "descripcion": "Caf colombiano de alta calidad",
+        "precio": 15000.0,
+        "stock": 50,
+        "rutaImagen": "tata",
+        "estado": "Activo"
+    }
+]
+
+--*--------------------*--------------------------*----------
+getContactosByIdUsuario
+[
+    {
+        "id": 6,
+        "telefono1": "3182233588",
+        "telefono2": "3133663900",
+        "direccion": "calle falsa 123",
+        "estado": "Activo",
+        "usuarios": {
+            "id": 6
+        }
+    }
+]
+
+--*--------------------*--------------------------*----------
+getPedidosSinEntregar
+[
+    {
+        "id": 1,
+        "cantidad": 1,
+        "precio": 8000.0,
+        "subtotal": 7900.0,
+        "pedidos": {
+            "id": 1
+        },
+        "productos": {
+            "id": 1
+        }
+    },
+    {
+        "id": 2,
+        "cantidad": 1,
+        "precio": 6000.0,
+        "subtotal": 5900.0,
+        "pedidos": {
+            "id": 1
+        },
+        "productos": {
+            "id": 1
+        }
+    }
+]
+
+--*--------------------*--------------------------*----------
+getPedidosSinEntregarCliente
+[
+    {
+        "id": 1,
+        "cantidad": 1,
+        "precio": 8000.0,
+        "subtotal": 7900.0,
+        "pedidos": {
+            "id": 1
+        },
+        "productos": {
+            "id": 1
+        }
+    },
+    {
+        "id": 2,
+        "cantidad": 1,
+        "precio": 6000.0,
+        "subtotal": 5900.0,
+        "pedidos": {
+            "id": 1
+        },
+        "productos": {
+            "id": 1
+        }
+    }
+]

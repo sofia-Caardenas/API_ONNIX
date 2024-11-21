@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "6bd6ab5b-bf58-429a-aeb7-b0f4b92b5179",
+		"name": "Onnix Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "14522474"
+	},
+	"item": [
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "getUsuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/Usuarios/getUsuarios"
+					},
+					"response": []
+				},
+				{
+					"name": "getUsuariosById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/Usuarios/getUsuariosById/1"
+					},
+					"response": []
+				},
+				{
+					"name": "getUsuariosByNombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/Usuarios/getUsuariosByNombre/brayan"
+					},
+					"response": []
+				},
+				{
+					"name": "crearUsuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Brayan Posada\",\r\n    \"email\": \"Brayannposadac@gmailñ.com\",\r\n    \"clave\": \"jusa\",\r\n    \"estado\": \"Activo\",\r\n    \"roles\": {\r\n        \"id\": 3\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/Usuarios/crearUsuario"
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarUsuario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 6,\r\n    \"email\": \"Brayannposadac@gmail.com\",\r\n    \"roles\": {\r\n            \"id\": 2\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/Usuarios/actualizarUsuario"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "getProductos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/Productos/getProductos"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductosById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/Productos/getProductosById/1"
+					},
+					"response": []
+				},
+				{
+					"name": "getProductosByNombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/Productos/getProductosByNombre/caf"
+					},
+					"response": []
+				},
+				{
+					"name": "crearProductos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Chuleta valluna\",\r\n    \"descripcion\": \"Chuleta valluna mela caramela\",\r\n    \"precio\": \"25000.00\",\r\n    \"stock\": \"15\",\r\n    \"fechaAgregado\": \"2024-10-20\",\r\n    \"rutaImagen\": \"tatatu\",\r\n    \"estado\": \"Activo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/Productos/crearProductos"
+					},
+					"response": []
+				},
+				{
+					"name": "actualizarProducto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"descripcion\": \"Chuleta valluna mela caramelo\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/v1/Productos/actualizarProducto"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
