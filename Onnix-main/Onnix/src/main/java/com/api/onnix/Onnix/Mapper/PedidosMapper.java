@@ -18,7 +18,7 @@ public class PedidosMapper {
         detallePedidosDTO.setPedidos(pedidosDTO);
 
         ProductosDTO productosDTO = new ProductosDTO();
-        productosDTO.setId(detallePedidos.getPedidos().getId());
+        productosDTO.setNombre(detallePedidos.getProductos().getNombre());
         detallePedidosDTO.setProductos(productosDTO);
 
         return detallePedidosDTO;
@@ -74,7 +74,7 @@ public class PedidosMapper {
         historialPedidosDTO.setEstado(historialPedidos.getEstado());
 
         UsuariosDTO usuariosDTO = new UsuariosDTO();
-        usuariosDTO.setId(historialPedidos.getUsuarios().getId());
+        usuariosDTO.setNombre(historialPedidos.getUsuarios().getNombre());
         historialPedidosDTO.setUsuarios(usuariosDTO);
 
         PedidosDTO pedidosDTO = new PedidosDTO();
