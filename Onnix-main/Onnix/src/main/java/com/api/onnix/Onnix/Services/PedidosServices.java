@@ -10,7 +10,14 @@ public interface PedidosServices {
 
     List<DetallePedidosDTO> getPedidosSinEntregar();
 
+    List<DetallePedidosDTO> getPedidos();
+
     List<DetallePedidosDTO> getPedidosSinEntregarCliente(Long idCliente);
 
+    List<DetallePedidosDTO> getPedidosCliente(Long idCliente);
+
     boolean guardarPedidoDetalle(List<DetallePedidosDTO> detallePedidosDTO);
+
+    boolean actualizarEstadoPedido(PedidosDTO pedidosDTO);
+
 }

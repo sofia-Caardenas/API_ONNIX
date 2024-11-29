@@ -23,9 +23,19 @@ public class HistorialPedidosController {
         return new ResponseEntity<>(historialPedidosServices.getHistorialPedidosSinEntregar(), new HttpHeaders(), HttpStatus.OK);
     }
 
+    @GetMapping(value="/getHistorialPedidos")
+    public ResponseEntity<List<HistorialPedidosDTO>> getHistorialPedidos() {
+        return new ResponseEntity<>(historialPedidosServices.getHistorialPedidos(), new HttpHeaders(), HttpStatus.OK);
+    }
+
     @GetMapping(value="/getHistorialPedidosSinEntregarCliente/{idUsuario}")
     public ResponseEntity<List<HistorialPedidosDTO>> getHistorialPedidosSinEntregarCliente(@PathVariable(value = "idUsuario") Long idUsuario) {
         return new ResponseEntity<>(historialPedidosServices.getHistorialPedidosSinEntregarCliente(idUsuario), new HttpHeaders(), HttpStatus.OK);
+    }
+
+    @GetMapping(value="/getHistorialPedidosCliente/{idUsuario}")
+    public ResponseEntity<List<HistorialPedidosDTO>> getHistorialPedidosCliente(@PathVariable(value = "idUsuario") Long idUsuario) {
+        return new ResponseEntity<>(historialPedidosServices.getHistorialPedidosCliente(idUsuario), new HttpHeaders(), HttpStatus.OK);
     }
 
     @PostMapping(value="/guardarHistorialPedido", consumes = "application/json",produces = "application/json")

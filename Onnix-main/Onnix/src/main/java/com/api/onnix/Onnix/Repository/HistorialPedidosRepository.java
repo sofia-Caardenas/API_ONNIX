@@ -11,12 +11,15 @@ import java.util.List;
 public interface HistorialPedidosRepository extends JpaRepository<HistorialPedidosEntity,Long> {
 
     @Query(value = "select u from HistorialPedidosEntity u " +
-            "where u.pedidos.estado != 'Entregado'")
+            "where u.estado != 'Entregado'")
     List<HistorialPedidosEntity> findAllBySinEntregar();
 
     @Query(value = "select u from HistorialPedidosEntity u " +
-            "where u.pedidos.estado != 'Entregado' and u.pedidos.usuarios.id = :idCliente")
+            "where u.estado != 'Entregado' and u.pedidos.usuarios.id = :idCliente")
     List<HistorialPedidosEntity> findAllBySinEntregarCliente(Long idCliente);
 
+    @Query(value = "select u from HistorialPedidosEntity u " +
+            "where u.pedidos.usuarios.id = :idCliente")
+    List<HistorialPedidosEntity> findAllByCliente(Long idCliente);
 
 }

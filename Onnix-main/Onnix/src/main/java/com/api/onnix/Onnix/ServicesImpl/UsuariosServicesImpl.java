@@ -69,7 +69,7 @@ public class UsuariosServicesImpl implements UsuariosServices{
             List<UsuariosEntity> data = usuariosRepository.findAllById(Collections.singleton(datosNew.getId()));
             for (UsuariosEntity dataOld : data) {
                 // Convierte la entidad a DTO para manipulación de los datos
-                UsuariosDTO datosOld = UsuariosMapper.toUsuariosDTO(dataOld);
+                UsuariosDTO datosOld = UsuariosMapper.toUsuariosDTOUpdate(dataOld);
                 // Agrega los campos faltantes (clave y estado)
                 datosOld.setClave(dataOld.getClave());
                 datosOld.setEstado(dataOld.getEstado());

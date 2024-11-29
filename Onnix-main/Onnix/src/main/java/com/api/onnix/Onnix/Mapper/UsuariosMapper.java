@@ -13,6 +13,20 @@ public class UsuariosMapper {
         usuariosDTO.setId(user.getId());
         usuariosDTO.setNombre(user.getNombre());
         usuariosDTO.setEmail(user.getEmail());
+        usuariosDTO.setEstado(user.getEstado());
+        RolesDTO rolesDTO = new RolesDTO();
+        rolesDTO.setId(user.getRoles().getId());
+        rolesDTO.setNombre(user.getRoles().getNombre());
+        rolesDTO.setEstado(user.getRoles().getEstado());
+        usuariosDTO.setRoles(rolesDTO);
+        return usuariosDTO;
+    }
+
+    public static UsuariosDTO toUsuariosDTOUpdate(UsuariosEntity user) {
+        UsuariosDTO usuariosDTO = new UsuariosDTO();
+        usuariosDTO.setId(user.getId());
+        usuariosDTO.setNombre(user.getNombre());
+        usuariosDTO.setEmail(user.getEmail());
         RolesDTO rolesDTO = new RolesDTO();
         rolesDTO.setId(user.getRoles().getId());
         rolesDTO.setNombre(user.getRoles().getNombre());

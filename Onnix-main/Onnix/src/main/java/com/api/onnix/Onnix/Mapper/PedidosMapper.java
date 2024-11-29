@@ -14,11 +14,21 @@ public class PedidosMapper {
         detallePedidosDTO.setSubtotal(detallePedidos.getSubtotal());
 
         PedidosDTO pedidosDTO = new PedidosDTO();
+        pedidosDTO.setFechaPedido(detallePedidos.getPedidos().getFechaPedido());
+        pedidosDTO.setEstado(detallePedidos.getPedidos().getEstado());
+        pedidosDTO.setTotal(detallePedidos.getPedidos().getTotal());
         pedidosDTO.setId(detallePedidos.getPedidos().getId());
+
+        UsuariosDTO usuariosDTO = new UsuariosDTO();
+        usuariosDTO.setNombre(detallePedidos.getPedidos().getUsuarios().getNombre());
+        usuariosDTO.setId(detallePedidos.getPedidos().getUsuarios().getId());
+        pedidosDTO.setUsuarios(usuariosDTO);
+
         detallePedidosDTO.setPedidos(pedidosDTO);
 
         ProductosDTO productosDTO = new ProductosDTO();
         productosDTO.setNombre(detallePedidos.getProductos().getNombre());
+        productosDTO.setPrecio(detallePedidos.getProductos().getPrecio());
         detallePedidosDTO.setProductos(productosDTO);
 
         return detallePedidosDTO;
@@ -74,10 +84,16 @@ public class PedidosMapper {
         historialPedidosDTO.setEstado(historialPedidos.getEstado());
 
         UsuariosDTO usuariosDTO = new UsuariosDTO();
-        usuariosDTO.setNombre(historialPedidos.getUsuarios().getNombre());
+        usuariosDTO.setNombre(historialPedidos.getPedidos().getUsuarios().getNombre());
+        usuariosDTO.setEmail(historialPedidos.getPedidos().getUsuarios().getEmail());
+        usuariosDTO.setEstado(historialPedidos.getPedidos().getUsuarios().getEstado());
+        usuariosDTO.setId(historialPedidos.getPedidos().getUsuarios().getId());
         historialPedidosDTO.setUsuarios(usuariosDTO);
 
         PedidosDTO pedidosDTO = new PedidosDTO();
+        pedidosDTO.setFechaPedido(historialPedidos.getPedidos().getFechaPedido());
+        pedidosDTO.setEstado(historialPedidos.getPedidos().getEstado());
+        pedidosDTO.setTotal(historialPedidos.getPedidos().getTotal());
         pedidosDTO.setId(historialPedidos.getPedidos().getId());
         historialPedidosDTO.setPedidos(pedidosDTO);
 

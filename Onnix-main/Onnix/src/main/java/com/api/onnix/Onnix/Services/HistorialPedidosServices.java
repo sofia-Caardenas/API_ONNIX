@@ -10,7 +10,11 @@ public interface HistorialPedidosServices {
 
     List<HistorialPedidosDTO> getHistorialPedidosSinEntregar();
 
+    List<HistorialPedidosDTO> getHistorialPedidos();
+
     List<HistorialPedidosDTO> getHistorialPedidosSinEntregarCliente(Long idCliente);
+
+    List<HistorialPedidosDTO> getHistorialPedidosCliente(Long idCliente);
 
     boolean guardarHistorialPedido(HistorialPedidosDTO historialPedidosDTO);
 }

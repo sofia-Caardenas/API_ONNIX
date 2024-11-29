@@ -19,4 +19,8 @@ public interface DetallePedidosRepository extends JpaRepository<DetallePedidosEn
             "where u.pedidos.estado != 'Entregado' and u.pedidos.usuarios.id = :idCliente")
     List<DetallePedidosEntity> findAllBySinEntregarCliente(Long idCliente);
 
+    @Query(value = "select u from DetallePedidosEntity u " +
+            "where u.pedidos.usuarios.id = :idCliente")
+    List<DetallePedidosEntity> findAllByCliente(Long idCliente);
+
 }

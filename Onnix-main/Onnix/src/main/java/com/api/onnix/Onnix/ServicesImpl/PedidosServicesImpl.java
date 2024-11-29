@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -35,9 +36,32 @@ public class PedidosServicesImpl implements PedidosServices {
     }
 
     @Override
+    public List<DetallePedidosDTO> getPedidos() {
+        List<DetallePedidosDTO> response = new ArrayList<>();
+        List<DetallePedidosEntity> data = detallePedidosRepository.findAll();
+        for(DetallePedidosEntity datos : data){
+            DetallePedidosDTO pedidos = PedidosMapper.toDetallePedidosDTO(datos);
+            response.add(pedidos);
+        }
+        return response;
+    }
+
+
+    @Override
     public List<DetallePedidosDTO> getPedidosSinEntregarCliente(Long idCliente) {
         List<DetallePedidosDTO> response = new ArrayList<>();
         List<DetallePedidosEntity> data = detallePedidosRepository.findAllBySinEntregarCliente(idCliente);
+        for(DetallePedidosEntity datos : data){
+            DetallePedidosDTO pedidos = PedidosMapper.toDetallePedidosDTO(datos);
+            response.add(pedidos);
+        }
+        return response;
+    }
+
+    @Override
+    public List<DetallePedidosDTO> getPedidosCliente(Long idCliente) {
+        List<DetallePedidosDTO> response = new ArrayList<>();
+        List<DetallePedidosEntity> data = detallePedidosRepository.findAllByCliente(idCliente);
         for(DetallePedidosEntity datos : data){
             DetallePedidosDTO pedidos = PedidosMapper.toDetallePedidosDTO(datos);
             response.add(pedidos);
@@ -61,5 +85,17 @@ public class PedidosServicesImpl implements PedidosServices {
         return true;
     }
 
+    @Override
+    public boolean actualizarEstadoPedido(PedidosDTO pedidosDTO) {
+        try {
+            PedidosEntity pedidosEntity = pedidosRepository.findAllById(Collections.singleton(pedidosDTO.getId())).get(0);
+            pedidosEntity.setId(pedidosDTO.getId());
+            pedidosEntity.setEstado(pedidosDTO.getEstado());
+            pedidosRepository.save(pedidosEntity);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return true;
+    }
 
 }

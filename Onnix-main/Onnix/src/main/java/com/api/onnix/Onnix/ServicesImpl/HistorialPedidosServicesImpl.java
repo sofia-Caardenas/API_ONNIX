@@ -29,6 +29,17 @@ public class HistorialPedidosServicesImpl implements HistorialPedidosServices {
     }
 
     @Override
+    public List<HistorialPedidosDTO> getHistorialPedidos() {
+        List<HistorialPedidosDTO> response = new ArrayList<>();
+        List<HistorialPedidosEntity> data = historialPedidosRepository.findAll();
+        for(HistorialPedidosEntity datos : data){
+            HistorialPedidosDTO pedidos = PedidosMapper.toHistorialPedidosDTO(datos);
+            response.add(pedidos);
+        }
+        return response;
+    }
+
+    @Override
     public List<HistorialPedidosDTO> getHistorialPedidosSinEntregarCliente(Long idCliente) {
         List<HistorialPedidosDTO> response = new ArrayList<>();
         List<HistorialPedidosEntity> data = historialPedidosRepository.findAllBySinEntregarCliente(idCliente);
@@ -38,6 +49,19 @@ public class HistorialPedidosServicesImpl implements HistorialPedidosServices {
         }
         return response;
     }
+
+    @Override
+    public List<HistorialPedidosDTO> getHistorialPedidosCliente(Long idCliente) {
+        List<HistorialPedidosDTO> response = new ArrayList<>();
+        List<HistorialPedidosEntity> data = historialPedidosRepository.findAllByCliente(idCliente);
+        for(HistorialPedidosEntity datos : data){
+            HistorialPedidosDTO pedidos = PedidosMapper.toHistorialPedidosDTO(datos);
+            response.add(pedidos);
+        }
+        return response;
+    }
+
+
 
     @Override
     public boolean guardarHistorialPedido(HistorialPedidosDTO historialPedidosDTO) {
