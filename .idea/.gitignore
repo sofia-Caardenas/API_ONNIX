@@ -1,3 +1,6 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+
+# Ignorar todos los archivos dentro del directorio target
+Onnix-main/Onnix/target/
